@@ -1,6 +1,6 @@
 # data_generator.py
 
-from skyfield.api import load, load_file
+from skyfield.api import load, load_file, utc
 from datetime import datetime, timedelta
 import json
 import numpy as np
@@ -67,8 +67,8 @@ def generate_positions(start_date, end_date):
     return positions
 
 if __name__ == '__main__':
-    start = datetime(2024, 1, 1, tzinfo=load.timescale().utc)
-    end = datetime(2024, 12, 31, 23, 59, 59, tzinfo=load.timescale().utc)
+    start = datetime(2024, 1, 1, tzinfo=utc)
+    end = datetime(2024, 12, 31, 23, 59, 59, tzinfo=utc)
 
     position_data = generate_positions(start, end)
 

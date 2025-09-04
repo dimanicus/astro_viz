@@ -10,3 +10,6 @@ positions.json
 # IDE/Editor specific files
 .vscode/
 .idea/
+
+# temporary files
+tmp.log
