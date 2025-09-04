@@ -1,0 +1,12 @@
+# Python virtual environment
+venv/
+
+# Ephemeris data file
+*.bsp
+
+# Generated data files
+positions.json
+
+# IDE/Editor specific files
+.vscode/
+.idea/
