@@ -43,7 +43,7 @@ def generate_positions(start_date, end_date):
         positions[date_str] = {}
         for name, planet in PLANETS.items():
             if name not in FAST_MOVERS:
-                astro = eph['earth'].at(t).observe(eph[planet['id']])
+                astro = eph['sun'].at(t).observe(eph[planet['id']])
                 x, y, z = astro.ecliptic_xyz().au
                 positions[date_str][name] = [round(x, 6), round(y, 6), round(z, 6)]
         current_date += timedelta(days=1)
@@ -57,7 +57,7 @@ def generate_positions(start_date, end_date):
         positions[date_str] = {}
         for name in FAST_MOVERS:
             planet = PLANETS[name]
-            astro = eph['earth'].at(t).observe(eph[planet['id']])
+            astro = eph['sun'].at(t).observe(eph[planet['id']])
             x, y, z = astro.ecliptic_xyz().au
             positions[date_str][name] = [round(x, 6), round(y, 6), round(z, 6)]
         current_date += timedelta(hours=1)
